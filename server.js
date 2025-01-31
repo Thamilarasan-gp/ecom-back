@@ -1,38 +1,26 @@
-import express from 'express'// create server
-import cors from 'cors'
-import 'dotenv/config'// to enable env to store secret key or API key 
+import express from 'express'  // create server
+import cors from 'cors'        // use ESModule import
+import 'dotenv/config'        // to enable env to store secret key or API key 
 import connectDB from './config/mongodb.js'
-//import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
-const bcrypt = require('bcrypt');
-
-// App config 
-const cors = require('cors');
-
-app.use(cors({ origin: 'frontend-o81yejgk2-shriharinis-projects.vercel.app' }));
 
 const app = express()
-const port= 4000
+const port = 4000
 
 connectDB()
 //connectCloudinary
 
-
 //middlewares 
 //request is passed here as json
-app.use (express.json())
-app.use(cors())
+app.use(express.json())
+app.use(cors({ origin: 'frontend-o81yejgk2-shriharinis-projects.vercel.app' })) // Use cors only once
 
 //API end points 
-app.use('/api/user',userRouter)
+app.use('/api/user', userRouter)
 
-app.get('/',(req,res)=>{
-    res.send("api working")//port 4000 open panna display 
+app.get('/', (req, res) => {
+    res.send("api working")  //port 4000 open panna display 
 })
 
 //start express server
- app.listen(port,()=>console.log('server started on port :' + port))
-// const port = process.env.PORT || 4000;
-//app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
-
-
+app.listen(port, () => console.log('server started on port :' + port))
