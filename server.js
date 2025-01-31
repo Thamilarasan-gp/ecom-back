@@ -7,9 +7,9 @@ import userRouter from './routes/userRoute.js'
 const bcrypt = require('bcrypt');
 
 // App config 
-// const cors = require('cors');
-// app.use(cors({ origin: '*' })); // Allow all origins (for development)
-// app.use(cors({ origin: 'http://localhost:5173' }));
+const cors = require('cors');
+
+app.use(cors({ origin: 'frontend-o81yejgk2-shriharinis-projects.vercel.app' }));
 
 const app = express()
 const port= 4000
