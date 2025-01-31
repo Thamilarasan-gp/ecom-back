@@ -6,6 +6,9 @@ import connectDB from './config/mongodb.js'
 import userRouter from './routes/userRoute.js'
 
 //App config 
+// const cors = require('cors');
+// app.use(cors({ origin: '*' })); // Allow all origins (for development)
+// app.use(cors({ origin: 'http://localhost:5173' }));
 
 const app = express()
 const port= process.env.PORT|| 4000
@@ -27,5 +30,8 @@ app.get('/',(req,res)=>{
 })
 
 //start express server
-app.listen(port,()=>console.log('server started on port :' + port))
+// app.listen(port,()=>console.log('server started on port :' + port))
+// const port = process.env.PORT || 4000;
+app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
+
 
