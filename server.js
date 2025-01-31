@@ -8,10 +8,7 @@ const app = express()
 const port = 4000
 
 connectDB()
-//connectCloudinary
 
-//middlewares 
-//request is passed here as json
 app.use(express.json())
 app.use(cors({ origin: 'frontend-o81yejgk2-shriharinis-projects.vercel.app' })) // Use cors only once
 
