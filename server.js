@@ -4,6 +4,7 @@ import 'dotenv/config'// to enable env to store secret key or API key
 import connectDB from './config/mongodb.js'
 //import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
+const bcrypt = require('bcrypt');
 
 // App config 
 // const cors = require('cors');
