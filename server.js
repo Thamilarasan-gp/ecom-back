@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
-import userRouter from "./routes/userRoutes.js"; // Import User Routes
+import userRouter from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
 // Use Routes
-app.use("/api/user", userRouter);  
+app.use("/api/user", userRouter);
 
 // Root Route
 app.get("/", (req, res) => {
